@@ -23,48 +23,53 @@
     
     var numberWins = 0;
     var numberLosses = 0;
-    var guessesLeft = 10
+    var guessesLeft = 10;
     var yourGuesses = [];
-    var guessLetter;
     var randomLetters;
     var wrongGuess;
     var rightGuess;
     var userText = document.getElementById("yourGuesses");
+    var guessesLeft = document.getElementById("guessesLeft");
     //The Computer needs to genterate a random letter the player must guess//
     var computerLetters = ["a", "b", "c", "c", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     
     for (var i = 0; i <computerLetters.length; i++) {
-        var randomLetters = computerLetters[Math.floor(Math.random() * computerLetters.lengt)];
+        var randomLetters = computerLetters[Math.floor(Math.random() * computerLetters.length)];
 
-        if (guessLetter === randomLetters) { 
+        if (userText === randomLetters) { 
         //the player wins;
         // the wins number increases by 1;
         numberWins++;
         // and the game resets;
-    };
+        };
     };
     console.log(randomLetters)
 
+    //event key
     document.onkeyup = function(event) {
         userText.textContent = event.key;
       };
-    // console.log("yourGuesses");
+    console.log(userText);
 
-    // if (guessLetter === randomNumber) { 
-    //     //the player wins;
-    //     // the wins number increases by 1;
-    //     numberWins++;
-    //     // and the game resets;
-    // };
+    if (userText === randomLetters) { 
+        //the player wins;
+        // the wins number increases by 1;
+        numberWins++;
+        // and the game resets;
+    console.log(numberWins)
+    
+    };
+    
 
-    if (guessLetter !== randomLetters) {
+    if (userText !== randomLetters) {
         // the player uses 1 of 9 guesses;
         var guessLetter = [];
         // the loss number increases by 1;
         numberLosses++;
         //the letter shows up with commas by the already guessed area;
     };
-
+    console.log(numberLosses)
+    console.log(guessesLeft)
     // if ("numberLosses" === 9) {
     //     //the game resets
     // };
