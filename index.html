@@ -24,46 +24,37 @@
     var numberWins = 0;
     var numberLosses = 0;
     var guessesLeft = 10;
-    var yourGuesses = [];
     var randomLetters;
-    var wrongGuess;
-    var rightGuess;
-    var userText = document.getElementById("yourGuesses");
-    var guessesLeft = document.getElementById("guessesLeft");
-    //The Computer needs to genterate a random letter the player must guess//
+    // var userText = document.getElementById("yourGuesses");
+    // var guessesLeft = document.getElementById("guessesLeft");
+    
     var computerLetters = ["a", "b", "c", "c", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     
     for (var i = 0; i <computerLetters.length; i++) {
         var randomLetters = computerLetters[Math.floor(Math.random() * computerLetters.length)];
 
-        if (userText === randomLetters) { 
-        //the player wins;
-
-        // the wins number increases by 1;
+        if (userText == randomLetters) { 
         numberWins++;
-        
-        // and the game resets;
+        break;
         };
     };
-    console.log(randomLetters)
-    console.log(numberWins)
+    console.log("Computer's number: " + randomLetters)
+    console.log("Wins: " + numberWins)
 
-    //event key
+    if (userText != randomLetters) {
+        numberLosses++;
+        guessesLeft--;
+        
+        
+    };
+    console.log("Losses: " + numberLosses)
+    console.log("Guesses Left: " + guessesLeft)
+    
     document.onkeyup = function(event) {
         userText.textContent = event.key;
       };
-    console.log(userText);
+    console.log("Your guesses so far: " + userText)
 
-
-    if (userText !== randomLetters) {
-        // the player uses 1 of 9 guesses;
-        var guessLetter = [];
-        // the loss number increases by 1;
-        numberLosses++;
-        //the letter shows up with commas by the already guessed area;
-    };
-    console.log(numberLosses)
-    console.log(guessesLeft)
    
     // if ("numberLosses" === 9) {
     //     //the game resets
