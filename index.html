@@ -17,7 +17,7 @@
     <p>Wins: <span id="numberWins"></span></p>
     <p>Losses: <span id="numberLosses"></span></p>
     <p>Guesses Left: <span id="guessesLeft"></span></p>
-    <p>Your Guesses so far: <span id="yourGuesses"></span></p>
+    <p>Your Guesses so far: <span id="userText"></span></p>
 
     <script type="text/javascript">
     
@@ -38,12 +38,15 @@
 
         if (userText === randomLetters) { 
         //the player wins;
+
         // the wins number increases by 1;
         numberWins++;
+        
         // and the game resets;
         };
     };
     console.log(randomLetters)
+    console.log(numberWins)
 
     //event key
     document.onkeyup = function(event) {
@@ -51,15 +54,6 @@
       };
     console.log(userText);
 
-    if (userText === randomLetters) { 
-        //the player wins;
-        // the wins number increases by 1;
-        numberWins++;
-        // and the game resets;
-    console.log(numberWins)
-    
-    };
-    
 
     if (userText !== randomLetters) {
         // the player uses 1 of 9 guesses;
@@ -70,6 +64,7 @@
     };
     console.log(numberLosses)
     console.log(guessesLeft)
+   
     // if ("numberLosses" === 9) {
     //     //the game resets
     // };
